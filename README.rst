@@ -41,15 +41,12 @@ Specifics
     
 Running the test suite
 
-(tested on windows)
-
-1. unzip simple_webserver package
-2. cd ~\\simple_webserver
-3. venv\\Scripts\\activate
+1. python3 -m venv venv 
+2. (activate venv on your OS)
+3. (venv) python -m pip install -r requirements.txt
 4. (venv) cd simple_webserver
 5. (venv) python run_tests.py
 
 - Reports are generated as both .xml and .html files
 - See ExpectedOutput.txt for an example of the test suite performance
 - See ExampleReports\ for examples of the generated .xml and .html files
-- If for some reason you find you cannot run the virtualenv I've included my requirements.txt
