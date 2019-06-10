@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.0 on win32)" generated="20190609 11:15:10.417" rpa="false">
+<suite id="s1" name="Webservice Tests" source="C:\Users\Roland\Desktop\simple_webserver\simple_webserver\webservice_tests.robot">
+<kw name="Start Process" library="Process" type="setup">
+<doc>Starts a new process on background.</doc>
+<arguments>
+<arg>flask</arg>
+<arg>run</arg>
+</arguments>
+<msg timestamp="20190609 11:15:10.720" level="INFO">Starting process:
+flask run</msg>
+<status status="PASS" starttime="20190609 11:15:10.720" endtime="20190609 11:15:10.723"></status>
+</kw>
+<test id="s1-t1" name="Sanity">
+<kw name="Sanity" library="WebserviceLibrary">
+<status status="PASS" starttime="20190609 11:15:10.724" endtime="20190609 11:15:10.724"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:10.724" endtime="20190609 11:15:10.724"></status>
+</kw>
+<doc>This basically makes sure the setup / teardown are functional</doc>
+<tags>
+<tag>dummy</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:10.723" endtime="20190609 11:15:10.725" critical="no"></status>
+</test>
+<test id="s1-t2" name="Sanity">
+<kw name="Sanity" library="WebserviceLibrary">
+<status status="PASS" starttime="20190609 11:15:10.726" endtime="20190609 11:15:10.726"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190609 11:15:10.727" level="FAIL">1 != 0 - better message here</msg>
+<status status="FAIL" starttime="20190609 11:15:10.726" endtime="20190609 11:15:10.727"></status>
+</kw>
+<doc>This basically makes sure the setup / teardown are functional</doc>
+<tags>
+<tag>dummy</tag>
+</tags>
+<status status="FAIL" starttime="20190609 11:15:10.726" endtime="20190609 11:15:10.727" critical="no">1 != 0 - better message here</status>
+</test>
+<test id="s1-t3" name="Query all tasks">
+<kw name="Query All Tasks" library="WebserviceLibrary">
+<status status="PASS" starttime="20190609 11:15:10.728" endtime="20190609 11:15:11.749"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:11.750" endtime="20190609 11:15:11.751"></status>
+</kw>
+<doc>REST API for webservice - ensures query all is functional</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:10.727" endtime="20190609 11:15:11.752" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Query specific task">
+<kw name="Query Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:11.757" endtime="20190609 11:15:12.769"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:12.770" endtime="20190609 11:15:12.771"></status>
+</kw>
+<doc>REST API for webservice - ensures query specific is functional</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:11.755" endtime="20190609 11:15:12.772" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Query invalid task">
+<kw name="Query Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:12.776" endtime="20190609 11:15:13.784"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>False</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:13.785" endtime="20190609 11:15:13.785"></status>
+</kw>
+<doc>REST API for webservice - query specific negative test</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:12.775" endtime="20190609 11:15:13.785" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Create new task">
+<kw name="Create New Task" library="WebserviceLibrary">
+<arguments>
+<arg>'Go to college'</arg>
+<arg>'DigiPen: Institute of Technology'</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:13.786" endtime="20190609 11:15:14.792"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:14.792" endtime="20190609 11:15:14.793"></status>
+</kw>
+<doc>REST API for webservice - ensures ability to create task</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:13.786" endtime="20190609 11:15:14.793" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Update task">
+<kw name="Update Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>2</arg>
+<arg>done=True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:14.795" endtime="20190609 11:15:15.805"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:15.807" endtime="20190609 11:15:15.807"></status>
+</kw>
+<doc>REST API for webservice - ensures ability to update task</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:14.795" endtime="20190609 11:15:15.808" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Update invalid task">
+<kw name="Update Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>-99</arg>
+<arg>done=True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:15.813" endtime="20190609 11:15:16.828"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>False</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:16.829" endtime="20190609 11:15:16.830"></status>
+</kw>
+<doc>REST API for webservice - update task negative test</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:15.811" endtime="20190609 11:15:16.831" critical="yes"></status>
+</test>
+<test id="s1-t9" name="Delete specific task">
+<kw name="Delete Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:16.836" endtime="20190609 11:15:17.856"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>True</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:17.857" endtime="20190609 11:15:17.859"></status>
+</kw>
+<doc>REST API for webservice - ensures ability to delete task</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:16.834" endtime="20190609 11:15:17.860" critical="yes"></status>
+</test>
+<test id="s1-t10" name="Delete invalid task">
+<kw name="Delete Specific Task" library="WebserviceLibrary">
+<arguments>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:17.865" endtime="20190609 11:15:18.878"></status>
+</kw>
+<kw name="Result Should Be" library="WebserviceLibrary">
+<arguments>
+<arg>False</arg>
+</arguments>
+<status status="PASS" starttime="20190609 11:15:18.880" endtime="20190609 11:15:18.881"></status>
+</kw>
+<doc>REST API for webservice - delete task negative test</doc>
+<tags>
+<tag>coding-challenge</tag>
+</tags>
+<status status="PASS" starttime="20190609 11:15:17.863" endtime="20190609 11:15:18.882" critical="yes"></status>
+</test>
+<kw name="Terminate All Processes" library="Process" type="teardown">
+<doc>Terminates all still running processes started by this library.</doc>
+<msg timestamp="20190609 11:15:18.889" level="INFO">Gracefully terminating process.</msg>
+<msg timestamp="20190609 11:15:18.990" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20190609 11:15:18.888" endtime="20190609 11:15:18.990"></status>
+</kw>
+<doc>Example test cases using the keyword-driven testing approach.
+
+All tests contain a workflow constructed from keywords in
+``WebserviceLibrary.py``.
+</doc>
+<status status="PASS" starttime="20190609 11:15:10.419" endtime="20190609 11:15:18.990"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="9" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" info="critical">coding-challenge</stat>
+<stat pass="1" fail="1">dummy</stat>
+</tag>
+<suite>
+<stat pass="9" fail="1" id="s1" name="Webservice Tests">Webservice Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20190609 11:15:10.725" level="WARN">Multiple test cases with name 'Sanity' executed in test suite 'Webservice Tests'.</msg>
+</errors>
+</robot>

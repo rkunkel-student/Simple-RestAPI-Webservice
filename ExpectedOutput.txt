@@ -1,0 +1,67 @@
+C:\Users\Roland\Desktop\simple_webserver\venv\Scripts\python.exe C:/Users/Roland/Desktop/simple_webserver/simple_webserver/run_tests.py
+==============================================================================
+[ WARN ] Multiple test cases with name 'Sanity' executed in test suite 'Webservice Tests'.
+Webservice Tests :: Example test cases using the keyword-driven testing app...
+==============================================================================
+Sanity :: This basically makes sure the setup / teardown are funct... | PASS |
+------------------------------------------------------------------------------
+Sanity :: This basically makes sure the setup / teardown are funct... | FAIL |
+1 != 0 - better message here
+------------------------------------------------------------------------------
+Query all tasks :: REST API for webservice - ensures query all is ... | PASS |
+------------------------------------------------------------------------------
+Query specific task :: REST API for webservice - ensures query spe... | PASS |
+------------------------------------------------------------------------------
+Query invalid task :: REST API for webservice - query specific neg... | PASS |
+------------------------------------------------------------------------------
+Create new task :: REST API for webservice - ensures ability to cr... | PASS |
+------------------------------------------------------------------------------
+Update task :: REST API for webservice - ensures ability to update... | PASS |
+------------------------------------------------------------------------------
+Update invalid task :: REST API for webservice - update task negat... | PASS |
+------------------------------------------------------------------------------
+Delete specific task :: REST API for webservice - ensures ability ... | PASS |
+------------------------------------------------------------------------------
+Delete invalid task :: REST API for webservice - delete task negat... | PASS |
+------------------------------------------------------------------------------
+Webservice Tests :: Example test cases using the keyword-driven te... | PASS |
+8 critical tests, 8 passed, 0 failed
+10 tests total, 9 passed, 1 failed
+==============================================================================
+Output:  C:\Users\Roland\Desktop\simple_webserver\simple_webserver\pos-output.xml
+Log:     C:\Users\Roland\Desktop\simple_webserver\simple_webserver\log.html
+Report:  C:\Users\Roland\Desktop\simple_webserver\simple_webserver\pos-report.html
+==============================================================================
+Webservice Tests 2 :: Example test cases using the keyword-driven testing a...
+==============================================================================
+Sanity :: This basically makes sure the setup / teardown are funct... | PASS |
+------------------------------------------------------------------------------
+Sanity :: This basically makes sure the setup / teardown are funct... [ WARN ] Multiple test cases with name 'Sanity' executed in test suite 'Webservice Tests 2'.
+| FAIL |
+1 != 0 - better message here
+------------------------------------------------------------------------------
+Query all tasks :: REST API for webservice - ensures query all is ... | FAIL |
+True != False - better message here
+------------------------------------------------------------------------------
+Webservice Tests 2 :: Example test cases using the keyword-driven ... | FAIL |
+1 critical test, 0 passed, 1 failed
+3 tests total, 1 passed, 2 failed
+==============================================================================
+Output:  C:\Users\Roland\Desktop\simple_webserver\simple_webserver\neg-output.xml
+Log:     C:\Users\Roland\Desktop\simple_webserver\simple_webserver\log.html
+Report:  C:\Users\Roland\Desktop\simple_webserver\simple_webserver\neg-report.html
+------------------------------
+Total Tests: 10
+Total Failures: 1
+Critical Failures: 0
+Passing Status for: pos-output.xml
+Deployment to jenkins approved
+------------------------------
+Total Tests: 3
+Total Failures: 2
+Critical Failures: 1
+Failing Status for: neg-output.xml
+Critical Errors were found while running the test suite
+Preventing deployment to jenkins
+
+Process finished with exit code 0
